@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>web ตอบโต้</title>
+
+    <style>
+        body {
+            background-color: rgb(232, 239, 255);
+        }
+
+        input {
+            font-size: x-large;
+            border-radius: 5px;
+            border-width: 3px;
+            border-color: rgb(117, 255, 124);
+            color: rgb(0, 0, 0);
+            height: 40px;
+            width: 15%;
+        }
+
+        select {
+            height: auto;
+            width: auto;
+            font-size: 15px;
+            padding: 10px;
+            border-radius: 25px;
+            border-color: rgb(86, 192, 241);
+            border-width: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Name</h2>
+    <p id="show-msg">ยินดีต้อนรับ: </p>
+    <input id="msg-input" placeholder="Name" type="text">
+
+    <h2>ภาษาโปรแกรมที่ชอบ</h2>
+    <p id="show-select">คุณเลือกภาษา: </p>
+    <select id="select-input">
+        <option>โปรดเลือกภาษาโปรแกรมที่ชอบ</option>
+        <option>JavaScript</option>
+        <option>Python</option>
+        <option>Go</option>
+    </select>
+
+    <script>
+        const messageInputElement = document.getElementById('msg-input')
+        messageInputElement.addEventListener("input", function () {
+            const msg = this.value
+            const showMsgElement = document.getElementById('show-msg')
+            showMsgElement.innerText = 'ยินดีต้อนรับ: ' + msg
+
+        })
+        const msgSelectElement = document.getElementById('select-input')
+        msgSelectElement.addEventListener("input", function () {
+            const msg = this.value
+            const showMsgElement = document.getElementById('show-select')
+            showMsgElement.innerText = 'คุณเลือกภาษา: ' + msg
+
+        })
+
+    </script>
+</body>
+
+</html>

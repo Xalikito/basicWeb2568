@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>อยากหาไรกิน</title>
+    <style>
+        body {
+            background-color: rgb(193, 182, 253);
+        }
+        h1 {
+            color: blue;
+            font-size: xx-large;
+            text-align: center;
+        }
+
+        p {
+            color: rgb(19, 255, 255);
+            font-size: x-large;
+            text-align: center;
+            padding: 0.25%;
+            background-color: rgb(0, 0, 0);
+            font-weight: 100;
+            border: 20%;
+            border-style: groove;
+            border-color: rgb(255, 2, 2);
+        }
+
+        img {
+            width: 30%;
+            height: 50%;
+            background-color: rgb(36, 250, 214);
+            padding: 10%;
+            border: 10%;
+            border-color: rgb(0, 0, 0);
+            border-width: 10px;
+            border-style: dotted;
+            border-radius: 50px;
+            margin: auto;
+            display: block;
+        }
+        button {
+            background-color: rgb(98, 240, 245);
+            padding: 20px;
+            color: blue;
+            font-size: medium;
+            border-style: dashed;
+            border-radius: 80%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id = "title-text">อาหารสุดอร่อย</h1>
+    <!-- <h1 style="color: rgb(2, 253, 253); font-size: 50px; margin: 5%; background-color: blanchedalmond;">อาหารสุดอร่อย</h1> -->
+    <p>หิวอยากหาอะไรกินต้องนี้เลย</p>
+    <a href="https://www.w3schools.com/css/default.asp">เรียนเว็ปเพิ่มเติม</a>
+    <img id = "web-img" src = "https://www.themercuryville.com/wp-content/uploads/2024/07/%E0%B8%AA%E0%B9%89%E0%B8%A1%E0%B8%95%E0%B8%B3-%E0%B8%AB%E0%B8%99%E0%B8%B6%E0%B9%88%E0%B8%87%E0%B9%83%E0%B8%99%E0%B8%AD%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B9%84%E0%B8%97%E0%B8%A2%E0%B8%A2%E0%B8%AD%E0%B8%94%E0%B8%99%E0%B8%B4%E0%B8%A2%E0%B8%A1.jpg"
+        alt="Food">
+    <button onclick="sayHello()">
+        คลิกที่นี้สิ
+    </button>
+    <script>
+        let customer = 'คุณลูกค้า'
+        function sayHello() {
+            alert("ยินดีที่ได้พบกัน")
+            const texttitleElement = document.getElementById('title-text')
+            texttitleElement.innerText = 'ยินดีต้อนรับครับ' + customer
+
+            const webImage = document.getElementById('web-img')
+            webImage.src = "https://i.pinimg.com/originals/af/e9/b9/afe9b97a551b62cb9c03d479f3d4c085.png"
+        }
+    </script>
+</body>
+
+</html>
