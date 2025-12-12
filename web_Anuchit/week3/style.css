@@ -1,0 +1,57 @@
+body {
+    background-color: rgb(230, 225, 221);
+}
+
+.header-text {
+    text-align: center;
+    color: crimson;
+}
+
+.header-container {
+    margin-top: 2%;
+    background-color: rgb(255, 255, 255);
+    padding: 1%;
+    border-radius: 10px;
+    width: 50%;
+}
+
+.flex-header {
+    display: flex;
+    justify-content: center;
+}
+
+.charm-regular {
+    font-family: "Charm", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.charm-bold {
+    font-family: "Charm", cursive;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.img-container {
+    padding: 1%;
+
+}
+
+.nav-menu-container {
+    background-color: white;
+    margin-top: 1%;
+    padding: 1%;
+    border-radius: 50px;
+}
+
+.nav-menu-item {
+    margin-left: 1%;
+    margin-right: 1%;
+    text-decoration: none;
+    color: blue;
+}
+
+.gallery-item {
+    margin: 5px;
+    width: 580px;
+}
