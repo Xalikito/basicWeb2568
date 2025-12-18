@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        ยืนยันตัวตนเข้าใช้ระบบเครือข่าย มทร.กรุงเทพ
+    </title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+    </script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+        </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+    <!--
+<script type="text/javascript" src="./jquery.min.js"></script>
+<script type="text/javascript" src="./bootstrap.min.js"></script>
+<link rel="stylesheet" href="./bootstrap.min.css" >
+<link rel="stylesheet" href="./font-awesome.min.css">
+-->
+
+
+    <style type="text/css">
+        body {
+            background-color: #f3f3f3;
+            font-size: 1.2em;
+        }
+
+        .form-login {
+            max-width: 100%;
+            width: 100%;
+            margin: 0 auto;
+            font: bold 14px sans-serif;
+            text-align: center;
+        }
+
+        .form-log-in-with-email {
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            text-align: center;
+        }
+
+        .form-log-in-with-email .form-white-background {
+            box-sizing: border-box;
+            width: 100%;
+            background-color: #ffffff;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            padding: 40px 20px;
+            margin-bottom: 32px;
+        }
+
+        .form-log-in-with-email .form-row {
+            text-align: left;
+            margin-bottom: 23px;
+        }
+
+        .form-log-in-with-email .form-title-row {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .form-log-in-with-email h1 {
+            display: inline-block;
+            box-sizing: border-box;
+            color: #4c565e;
+            font-size: 24px;
+            padding: 0 30px 15px;
+            border-bottom: 2px solid #6caee0;
+            margin: 0;
+        }
+
+        .form-log-in-with-email .form-row>label span {
+            display: inline-block;
+            box-sizing: border-box;
+            color: #5f5f5f;
+            width: 125px;
+            text-align: right;
+            padding-right: 75px;
+            margin-bottom: 10px;
+        }
+
+        .form-log-in-with-email input {
+            color: #5f5f5f;
+            box-sizing: border-box;
+            width: 100%;
+            box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+            padding: 12px 18px;
+            border: 1px solid #dbdbdb;
+        }
+
+        .form-log-in-with-email button {
+            display: block;
+            border-radius: 2px;
+            background-color: #6caee0;
+            color: #ffffff;
+            font-weight: bold;
+            box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+            padding: 15px 35px;
+            border: 0;
+            margin: 55px auto 0;
+            cursor: pointer;
+        }
+
+        .form-log-in-with-email .form-forgotten-password,
+        .form-log-in-with-email .form-create-an-account {
+            text-decoration: none;
+            padding: 4px 8px;
+            font-weight: normal;
+        }
+
+        .form-log-in-with-email .form-forgotten-password {
+            color: #4e9eda;
+        }
+
+        .form-log-in-with-email .form-create-an-account {
+            color: #7b9d62;
+            background-color: #d6f0c3;
+        }
+
+        /* Content OR and circle span */
+        /*.form-log-in-with-email:after{
+ content: 'OR';
+ position: absolute;
+ bottom: 260px;
+ right: -100px;
+ 
+ border-radius: 50%;
+ background-color: #edeca5;
+ width: 50px;
+ height: 50px;
+ color: #93923b;
+ font-size: 17px;
+ line-height: 50px;
+ }
+ */
+
+        .form-sign-in-with-social {
+            display: inline-block;
+            max-width: 180px;
+            box-sizing: border-box;
+            vertical-align: top;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .form-sign-in-with-social .form-title-row {
+            margin-bottom: 50px;
+        }
+
+        .form-sign-in-with-social .form-title {
+            box-sizing: border-box;
+            color: #4c565e;
+            font-size: 24px;
+            padding: 15px 20px;
+            border-bottom: 2px solid #6caee0;
+        }
+
+        .form-sign-in-with-social .form-google-button {
+            color: #ffffff;
+            display: block;
+            width: 145px;
+            height: 40px;
+            font-size: 12px;
+            line-height: 40px;
+            background-color: rgba(222, 110, 60, 0.9);
+            box-shadow: 1px 2px 2px 0 rgba(0, 0, 0, 0.08);
+            border-radius: 2px;
+            margin: 8px auto;
+            text-decoration: none;
+        }
+
+        .form-sign-in-with-social .form-facebook-button {
+            color: #ffffff;
+            display: block;
+            width: 145px;
+            height: 40px;
+            font-size: 12px;
+            line-height: 40px;
+            background-color: rgba(75, 136, 194, 0.9);
+            box-shadow: 1px 2px 2px 0 rgba(0, 0, 0, 0.08);
+            border-radius: 2px;
+            margin: 8px auto;
+            text-decoration: none;
+        }
+
+        .form-sign-in-with-social .form-twitter-button {
+            color: #ffffff;
+            display: block;
+            width: 145px;
+            height: 40px;
+            font-size: 12px;
+            line-height: 40px;
+            background-color: rgba(123, 195, 226, 0.9);
+            box-shadow: 1px 2px 2px 0 rgba(0, 0, 0, 0.08);
+            border-radius: 2px;
+            margin: 8px auto;
+            text-decoration: none;
+        }
+
+        /* Making the form responsive. Remove these media queries
+ if you don't need the form to work on mobile devices. */
+
+        @media (max-width: 360px) {
+            .form-log-in-with-email .form-white-background {
+                width: 300px;
+                padding-left: 35px;
+                padding-right: 35px;
+            }
+
+            .form-log-in-with-email .form-row>label span {
+                display: block;
+                text-align: left;
+                padding: 0 0 10px;
+            }
+
+            .form-log-in-with-email .form-email,
+            .form-log-in-with-email .form-password {
+                display: block;
+                margin: 0 auto;
+            }
+
+            .form-log-in-with-email:after {
+                bottom: -80px;
+                left: 50%;
+                margin-left: -25px;
+            }
+
+            .form-log-in-with-email .form-forgotten-password,
+            .form-log-in-with-email .form-create-an-account {
+                display: block;
+                margin: 5px auto;
+                max-width: 180px;
+            }
+        }
+
+        /*HEADER CSS */
+
+        #navigation-purple {
+            padding-bottom: 0px;
+            margin: 0;
+            background-color: yellowgreen;
+            border: none;
+            border-radius: 0;
+            position: inherit;
+        }
+
+        #navigation-purple .nav {
+            margin-left: -15px;
+        }
+
+        #navigation-purple .nav>li {
+            border-bottom: 2px solid transparent;
+            margin-bottom: 34px;
+        }
+
+        #navigation-purple .nav>li:hover {
+            border-bottom-color: #fff;
+        }
+
+        #navigation-purple .nav>li:focus {
+            background-color: transparent;
+        }
+
+        #navigation-purple .nav>li>a {
+            font-size: 18px;
+            color: white;
+        }
+
+        #navigation-purple .nav>li>a:hover,
+        #navigation-purple .nav>li>a:focus {
+            background-color: transparent;
+        }
+
+        #navigation-purple .navbar-collapse {
+            padding-top: 35px;
+        }
+
+        #navigation-purple .avatar {
+            height: 80px;
+            float: left;
+            margin-top: 19px;
+        }
+
+        #navigation-purple .icon-bar {
+            background-color: white;
+        }
+
+        #navigation-purple .navbar-toggle {
+            border-color: white;
+            float: right;
+            margin-left: 25px;
+            margin-top: 30px;
+        }
+
+        #navigation-purple .navbar-toggle:hover,
+        #navigation-purple .navbar-toggle:focus {
+            background-color: transparent;
+        }
+
+        @media screen and (max-width: 767px) {
+            #navigation-purple .navbar-collapse {
+                padding-top: 0;
+            }
+
+            #navigation-purple ul>li {
+                float: left;
+                clear: left;
+                margin-left: 4px;
+                padding-bottom: 8px;
+                margin-bottom: 5px !important;
+            }
+
+            #navigation-purple ul>li>a {
+                padding-bottom: 2px;
+            }
+
+            #navigation-purple ul>li:hover {
+                border-bottom: 2px solid white;
+            }
+
+            #navigation-purple .avatar {
+                height: 60px;
+                margin-top: 18px;
+                margin-bottom: 18px;
+            }
+        }
+
+        .well {
+            background-color: white;
+        }
+    </style>
+
+    <!-- FOOTER CSS -->
+    <style type="text/css">
+        .footer-distributed {
+            background-color: #292c2f;
+            box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+            box-sizing: border-box;
+            width: 100%;
+            text-align: left;
+            font: bold 16px sans-serif;
+            padding: 55px 50px;
+            margin-top: 80%;
+        }
+
+        .footer-distributed .footer-left,
+        .footer-distributed .footer-center,
+        .footer-distributed .footer-right {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        /* Footer left */
+
+        .footer-distributed .footer-left {
+            width: 40%;
+        }
+
+        /* The company logo */
+
+        .footer-distributed h3 {
+            color: #ffffff;
+            font: normal 36px 'Cookie', cursive;
+            margin: 0;
+        }
+
+        .footer-distributed h3 span {
+            color: #5383d3;
+        }
+
+        /* Footer links */
+
+        .footer-distributed .footer-links {
+            color: #ffffff;
+            margin: 20px 0 12px;
+            padding: 0;
+        }
+
+        .footer-distributed .footer-links a {
+            display: inline-block;
+            line-height: 1.8;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .footer-distributed .footer-company-name {
+            color: #8f9296;
+            font-size: 14px;
+            font-weight: normal;
+            margin: 0;
+        }
+
+        /* Footer Center */
+
+        .footer-distributed .footer-center {
+            width: 35%;
+        }
+
+        .footer-distributed .footer-center i {
+            background-color: #33383b;
+            color: #ffffff;
+            font-size: 25px;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 42px;
+            margin: 10px 15px;
+            vertical-align: middle;
+        }
+
+        .footer-distributed .footer-center i.fa-envelope {
+            font-size: 17px;
+            line-height: 38px;
+        }
+
+        .footer-distributed .footer-center p {
+            display: inline-block;
+            color: #ffffff;
+            vertical-align: middle;
+            margin: 0;
+        }
+
+        .footer-distributed .footer-center p span {
+            display: block;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 2;
+        }
+
+        .footer-distributed .footer-center p a {
+            color: #5383d3;
+            text-decoration: none;
+            ;
+        }
+
+        /* Footer Right */
+
+        .footer-distributed .footer-right {
+            width: 20%;
+        }
+
+        .footer-distributed .footer-company-about {
+            line-height: 20px;
+            color: #92999f;
+            font-size: 13px;
+            font-weight: normal;
+            margin: 0;
+        }
+
+        .footer-distributed .footer-company-about span {
+            display: block;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .footer-distributed .footer-icons {
+            margin-top: 25px;
+        }
+
+        .footer-distributed .footer-icons a {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            cursor: pointer;
+            background-color: #33383b;
+            border-radius: 2px;
+            font-size: 20px;
+            color: #ffffff;
+            text-align: center;
+            line-height: 35px;
+            margin-right: 3px;
+            margin-bottom: 5px;
+        }
+
+        /* If you don't want the footer to be responsive, remove these media queries */
+
+        @media (max-width: 880px) {
+            .footer-distributed {
+                font: bold 14px sans-serif;
+            }
+
+            .footer-distributed .footer-left,
+            .footer-distributed .footer-center,
+            .footer-distributed .footer-right {
+                display: block;
+                width: 100%;
+                margin-bottom: 40px;
+                text-align: center;
+            }
+
+            .footer-distributed .footer-center i {
+                margin-left: 0;
+            }
+        }
+
+        footer {
+            position: static;
+            bottom: 0;
+        }
+
+        @media (max-height: 800px) {
+            footer {
+                position: static;
+            }
+
+            header {
+                padding-top: 40px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-default" id="navigation-purple">
+        <div class="container">
+            <a href="#">
+                <img class="img-responsive avatar" src="/XX/YY/ZZ/CI/FHEHLG" alt="logo">
+            </a>
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar">
+                    </span>
+                    <span class="icon-bar">
+                    </span>
+                    <span class="icon-bar">
+                    </span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+
+            </div>
+        </div>
+
+
+    </nav>
+
+
+
+
+    <div class="col-xs-12 col-sm-12 ">
+        <div class="col-lg-3 col-md-3 col-sm-3" style="margin-top:30px">
+            <div class="main-content">
+
+                <h2>
+                    LOGIN INTERNET
+                </h2>
+                <form class="form-login" method="post" action="/">
+
+                    <div class="form-log-in-with-email">
+
+                        <div class="form-white-background">
+
+                            <input type="hidden" name="4Tredir" value="http://10.255.172.1:1000/login?0191a63414059acc">
+                            <input type="hidden" name="magic" value="0797a63d1b0fa188">
+
+                            <div class="form-row">
+                                <label>
+                                    <span>
+                                        Username
+                                    </span>
+                                    <input name="username" id="ft_un" type="text" placeholder="กรุณากรอก user name"
+                                        autofocus="">
+                                </label>
+                            </div>
+
+                            <div class="form-row">
+                                <label>
+                                    <span>
+                                        Password
+                                    </span>
+                                    <input name="password" id="ft_pd" type="password" placeholder="กรุณากรอก พาสเวิร์ด">
+                                </label>
+                            </div>
+
+                            <div class="form-row">
+                                <button type="submit" id="submit" name="submit">
+                                    Log in
+                                </button>
+                            </div>
+
+                            <a href="https://passwd.rmutk.ac.th/">
+                                หากต้องการเปลี่ยนรหัสผ่านคลิก ที่นี่
+                            </a>
+
+                        </div>
+                        <!--
+<a href="#" class="form-forgotten-password" data-toggle="tooltip" data-placement="top"
+title="หากท่านลืมรหัสผ่านกรุณาส่งคำขอมาที่ email : is@mail.rmutk.ac.th โดยระบุ user ทีท่านต้องการ รีเซ็ตรหัสผ่าน">
+ลืมรหัสผ่าน ·
+</a>
+-->
+
+                        <div class="well">
+                            <span style="color:red">
+                                หากท่านลืมรหัสผ่าน !!
+                            </span>
+                            <br>
+                            สามารถยื่นคำขอเพื่อ Reset รหัสผ่าน โดยโทรมาที่เบอร์มาได้ที่
+                            <span style="color:red">
+                                0 2287 7010
+                            </span>
+                            ·
+                        </div>
+
+                        <!--
+<a href="#" class="form-create-an-account">
+Create an account →
+</a>
+-->
+
+                    </div>
+
+
+                </form>
+
+            </div>
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-9" style="margin-top:30px">
+            <h2>
+                ข่าวประกาศ
+            </h2>
+            <!--
+<iframe src="http://www.carit.rmutk.ac.th/expage/feed.php" style="width:100%;height:1000px;background-color:white;">
+</iframe>
+-->
+
+            <div class="well">
+                <ul>
+                    <h4>
+                        การเชื่อมต่อ Wifi โดยไม่ต้องกรอกรหัสผ่านบ่อยครั้ง
+                    </h4>
+                    <li>
+                        เพื่อเป็นการลดปัญหาการกรอกรหัสผ่านบ่อยครั้งในขณะที่ใช้งาน Wifi ภายในมหาวิทยาลัย
+                        ทางสำนักวิทยบริการและเทคโนโลยีสารสนเทศ
+                        ขอให้ท่านที่ต้องการใช้งาน Wifi เชื่อมต่อ Access Point ชื่อ
+                        <font color="#FF3300">
+                            <b>
+                                RMUTK-Mobile
+                            </b>
+                        </font>
+                        <u>
+                            เฉพาะเครื่องที่ท่านแน่ใจว่าท่านใช้งานแต่เพียงผู้เดียว
+                        </u>
+                        เพราะระบบจะจำชื่อที่ท่าน Login ครั้งแรกเอาไว้เสมอ
+
+                        <br>
+                        <u>
+                            <font color="#0066FF">
+                                ข้อดี
+                            </font>
+                        </u>
+                        คือหลังจากท่านเชื่อมต่อในครั้งแรกแล้วครั้งต่อไปเครื่องของท่านจะเชื่อมต่อระบบ Wifi
+                        ของมหาวิทยาลัยโดยอัตโนมัติ โดยไม่ต้องกรอกรหัสอีกรอบ
+                        <font color="#CC3300">
+                            <u>
+                                ทั้งนี้ Access Point เดิมที่ชื่อ RMUTKWiFi และ RMUTKWiFi_1 ยังคงใช้งานได้ปกติ
+                            </u>
+                        </font>
+                    </li>
+                </ul>
+            </div>
+
+            <!--
+<div class="well">
+<ul>
+<li>
+นักศึกษาใหม่ ที่ต้องการ Account สำหรับใช้งาน Internet ขณะนี้
+สำนักวิทยบริการและเทคโนโลยีสารสนเทศได้พัฒนาระบบ Register เพื่อขอ Account ในการใช้งาน Internet
+ขึ้น โดยให้นักศึกษาปฏิบัติดังนี้ 
+<br>
+<ol>
+<li>
+ให้นักศึกษาเข้าไปยังเว็บซต์ http://exmail.rmutk.ac.th:8080 หรือ 
+<a
+href="http://exmail.rmutk.ac.th:8080/Student/Request/RequestAccount.aspx"
+target="_blank" style="color: rgb(245, 17, 17);">
+คลิกที่นี่
+</a>
+</li>
+<li>
+กรอกข้อมูลให้ถูกต้องโดยเฉพาะ นักศึกษาควรกรอกข้อมูล ชื่อภาษาอังกฤษ นามสกุลภาษาอังกฤษ
+(ตามบัตรประชาชนเท่านั้น) รหัสนักศึกษา วัน เดือน ปี เกิดและรหัสบัตรประชาชน
+เนื่องจากระบบจะตรวจสอบข้อมูลที่ท่านให้ไว้กับสำนักส่งเสริมวิชาการและงานทะเบียนว่าตรงหรือไม่
+</li>
+<li>
+การกรอกข้อมูลไม่ถูกต้องระบบอาจยอมให้ผ่านในขั้นตอนสุดท้าย แต่จะทำให้ท่านไม่สามารถใช้งาน
+Account ได้ในขณะนี้ เนื่องจากต้องรอเจ้าหน้าที่ดำเนินการตรวจสอบ อย่างน้อย 2 วัน
+</li>
+<li>
+การกรอกข้อมูลได้ถูกต้องจะทำให้นักศึกษาได้ใช้งาน Account นี้ได้ทันที กรณีมีปัญหา ติดต่อ
+คุณธวัชชัย ทองคำ (หมู) 022879600 ต่อ 7010 หรือ 7068 (เวลาทำการ) หรือ e-mail :
+thawatchai.t@rmutk.ac.th
+</li>
+</ol>
+**หมายเหตุ เมื่อนักศึกษา ลงทะเบียน และ login เข้าใช้งานครั้งแรกแล้ว สามารถ นำ user และ password
+ส่วนนี้ไปใช้งานร่วมกับ ระบบ Elearnning และ student mail ได้ทันที
+</li>
+<li>
+<b>
+ระวัง
+</b>
+ขณะลงทะเบียนขอ Account รหัสนักศึกษา และรหัสบัตรประชาชน ต้องไม่มี ขีด เช่น 
+<br>
+54504030147-9 (ผิด) 
+<br>
+545040301479 (ถูก) 
+<br>
+มิฉะนั้นจะทำให้ท่านได้รับ Account ล่าช้า หรืออาจต้อง Register ใหม่
+</li>
+</ul>
+</div>
+-->
+            <div class="well">
+                <h4>
+                    บทลงโทษสำหรับผู้กระทำผิด พรบ ว่าด้วยการกระทำผิดเกี่ยวกับคอมพิวเตอร์ พ.ศ. 2550
+                </h4>
+                <table class="table table-bordered table-responsive">
+                    <thead>
+                        <tr class="info">
+                            <th>
+                                ฐานความผิด
+                            </th>
+                            <th>
+                                โทษจำคุก
+                            </th>
+                            <th>
+                                โทษปรับ
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                มาตรา 5 การเข้าถึงระบบคอมพิวเตอร์โดยมิชอบ
+                            </td>
+                            <td>
+                                ไม่เกิน 6 เดือน
+                            </td>
+                            <td>
+                                ไม่เกิน 10,000 บาท
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                มาตรา 6
+                                การเปิดเผยมาตรการป้องกันการเข้าถึงระบบคอมพิวเตอร์ที่ผู้อื่นจัดทำขึ้นเป็นการเฉพาะโดยไม่ชอบ
+                            </td>
+                            <td>
+                                ไม่เกิน 1 ปี
+                            </td>
+                            <td>
+                                ไม่เกิน 20,000 บาท
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                มาตรา 7 การเข้าถึงข้อมูลคอมพิวเตอร์โดยไม่ชอบ
+                            </td>
+                            <td>
+                                ไม่เกิน 2 ปี
+                            </td>
+                            <td>
+                                ไม่เกิน 40,000 บาท
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                มาตรา 8 การดักรับข้อมูลคอมพิวเตอร์ของผู้อื่นโดยไม่ชอบ
+                            </td>
+                            <td>
+                                ไม่เกิน 3 ปี
+                            </td>
+                            <td>
+                                ไม่เกิน 60,000 บาท
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                มาตรา 9 การทำให้เสียหาย ทำลาย แก้ไข เปลี่ยนแปลงเพิ่มเติมข้อมูลคอมพิวเตอร์โดยไม่ชอบ
+                            </td>
+                            <td>
+                                ไม่เกิน 5 ปี
+                            </td>
+                            <td>
+                                ไม่เกิน 100,000 บาท
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                มาตรา 10 การกระทำเพื่อให้การทำงานของระบบคอมพิวเตอร์ของผู้อื่นไม่สามารถทำงานได้ตามปกติ
+                            </td>
+                            <td>
+                                ไม่เกิน 5 ปี
+                            </td>
+                            <td>
+                                ไม่เกิน 100,000 บาท
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                มาตรา 11 การส่งข้อมูลคอมพิวเตอร์รบกวนการใช้ระบบคอมพิวเตอร์ของคนอื่นโดยปกติสุข (Spam
+                                Mail)
+                            </td>
+                            <td>
+                                ไม่มี
+                            </td>
+                            <td>
+                                ไม่เกิน 100,000 บาท
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                มาตรา 12 การจำหน่ายชุดคำสั่งที่จัดทำขึ้นเพื่อนำไปใช้เป็นเครื่องมือในการกระทำผิด
+                            </td>
+                            <td>
+                                ไม่เกิน 1 ปี
+                            </td>
+                            <td>
+                                ไม่เกิน 20,000 บาท
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                มาตรา 13 การกระทำผิดต่อความมั่นคง
+                                <li>
+                                    ก่อความเสียหายแก่ข้อมูลคอมพิวเตอร์ฺ
+                                </li>
+                                <li>
+                                    กระทบต่อความมั่นคงความปลอดภัยของประเทศ / เศรษฐกิจ
+                                </li>
+                                <li>
+                                    เป็นเหตุให้ผู้อื่นถึงแก่ชีวิต
+                                </li>
+                            </td>
+                            <td>
+                                <br>
+                                <li>
+                                    ไม่เกิน 10 ปี
+                                </li>
+                                <li>
+                                    3 ปี - 15 ปี
+                                </li>
+                                <li>
+                                    10 ปี - 20 ปี
+                                </li>
+                            </td>
+                            <td>
+                                ไม่เกิน 200,000 บาท และ 60,000 - 300,000 บาท
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                มาตรา 14 การใช้ระบบคอมพิวเตอร์ทำความผิดอื่น (เผยแพร่ เนื้อหาอันไม่เหมาะสม)
+                            </td>
+                            <td>
+                                ไม่เกิน 5 ปี
+                            </td>
+                            <td>
+                                ไม่เกิน 100,000 บาท
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                มาตรา 15 ผู้ให้บริการจงใจสนับสนุนหรือยินยอมให้มีการกระทำความผิด
+                            </td>
+                            <td>
+                                ต้องระวางโทษเช่นเดียวกับผู้กระทำความผิด
+                            </td>
+                            <td>
+                                ต้องระวางโทษเช่นเดียวกับผู้กระทำความผิด
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                มาตรา 16 การตกแต่งข้อมูลคอมพิวเตอร์ที่เป็นภาพของบุคคล
+                            </td>
+                            <td>
+                                ไม่เกิน 3 ปี
+                            </td>
+                            <td>
+                                ไม่เกิน 60,000 บาท
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <div style="clear:both;">
+        <footer class="footer-distributed">
+
+            <div class="footer-left">
+
+                <h3>
+                    UTK
+                    <span>
+                        Carit
+                    </span>
+                </h3>
+
+                <p class="footer-links">
+                    <a href="http://www.carit.rmutk.ac.th/index.php">
+                        Carit Site
+                    </a>
+                    ,
+                    <a href="http://is.rmutk.ac.th">
+                        IT Site
+                    </a>
+
+
+                </p>
+
+                <p class="footer-company-name">
+                    มหาวิทยาลัยเทคโนโลยีราชมงคลกรุงเทพ © 2016
+                </p>
+            </div>
+
+            <div class="footer-center">
+
+                <div>
+                    <i class="fa fa-map-marker">
+                    </i>
+                    <p>
+                        <span>
+                            มทร.กรุงเทพ
+                            เลขที่ 2 ถนนนางลิ้นจี่ ทุ่งมหาเมฆ สาทร
+                        </span>
+                        กรุงเทพฯ 10120
+                    </p>
+                </div>
+
+                <div>
+                    <i class="fa fa-phone">
+                    </i>
+                    <p>
+                        +66 0 2287 7010
+                    </p>
+                </div>
+
+                <!--
+<div>
+<i class="fa fa-envelope">
+</i>
+
+-->
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
