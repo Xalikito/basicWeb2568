@@ -1,31 +1,41 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Week 4 - Project Overview</title>
-        <link rel="stylesheet" href="./style.css">
-    </head>
 
-    <body>
-        <div>
-            <h1>Week 4 - Project Overview</h1>
-        </div>
-        <script>
-            // const confirmed = window.confirm('แน่ใจหรือไม่ว่าคุณต้องการดูหน้านี้');
-            // if (confirmed) {
-            //     window.alert('ยินดีต้อนรับสู่หน้านี้');
-            // } else {
-            //     window.alert('คุณยกเลิกการดูหน้านี้')
-            // }
-            // const userName = window.prompt("คุณชื่ออะไร")
-            // if (userName) {
-            //     window.alert("สวัสดีครับ คุณ " + userName)
-            // }
-            const confirmedToOpenNewTab =  window.confirm("ต้องการพิมพ์หน้านี้ไหม?");
-            if (confirmedToOpenNewTab) {
-                window.print();
-            }
-        </script>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 4 - Project Overview</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div>
+        <h1 id="greeting">สวัสดีคุณ [ชื่อ]</h1>
+    </div>
+    <div>
+        <button onclick="showUserInfo()">แสดงชื่อผู้ใช้</button>
+        <button onclick="window.location.reload()">รีเฟรชหน้า</button>
+        <button onclick="openNewWindow()">เปิดหน้าต่างใหม่</button>
+    </div>
+
+    <script>
+    const userName = window.prompt("กรุณาใส่ชื่อคุณ")
+    if (userName) {
+        document.getElementById("greeting").innerText = `สวัสดีคุณ ${userName}`;
+    }
+
+    function showUserInfo() {
+        const userAgent = navigator.userAgent;
+        const language = navigator.language;
+        const width = screen.width;
+        const height = screen.height;
+        alert(`ข้อมูลผู้ใช้:\nUser Agent: ${userAgent}\nLanguage: ${language}\nScreen Width: ${width}\nScreen Height: ${height}`)
+    }
+
+    function openNewWindow() {
+        window.open("https://www.w3schools.com/")
+    }
+    </script>
+</body>
+
 </html>
