@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>แบบฟอร์มยืมหนังสื้อ</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="flex justify-center w-screen h-screen">
+        <div class="bg-white w-xl w1/3 p-3 m-10 rounded-lg">
+            <h1 class="text-center font-bold text-xl">แบบฟอร์มยืมหนังสื้อ</h1>
+            <p class="text-sm text-center">แบบฟอร์มยืมหนังสื้อ สำหรับนักศึกษา</p>
+            <form>
+                <fieldset class="fieldset bg-fuchsia-50 border-rose-700 rounded-box w-xs border mt-6 p-3">
+                    <legend class="fieldset-legend">ข้อมูลนักศึกษา</legend>
+
+                    <label class="label">ชื่อ</label>
+                    <input type="text" class="input input-success" placeholder="กรุกรอกชื่อนักศึกษา" />
+
+                    <label class="label">นามสกุล</label>
+                    <input type="text" class="input input-info" placeholder="กรุกรอกนามสกุลนักศึกษา" />
+
+                    <label class="label">รหัสนักศึกษา</label>
+                    <input type="text" class="input input-error" placeholder="กรุกรอกรหัสนักศึกษา" />
+                </fieldset>
+                <div class="mt-6 p-2">
+                    <p>หนักสือที่ต้องการยืม</p>
+                    <select class="select select-info">
+                        <option disabled selected>กรุณาเลือกหนังสือที่ต้องการยืม</option>
+                        <option>การเดินทางของพระจันทร์</option>
+                        <option>ชีวิตดีขึ้นทุกด้านด้วยการจัดบ้านแค่ครั้งเดียว</option>
+                        <option>The Alchemist : ขุมทรัพย์สุดปลายฝัน</option>
+                        <option>100 years of solitude : หนึ่งร้อยปีแห่งความโดดเดี่ยว</option>
+                        <option>21 บทเรียน สำหรับศตวรรษที่ 21 : 21 lessons for 21st century</option>
+                    </select>
+                </div>
+                <div class="mt-6 p-2"></div>
+                <button class="btn btn-secondary w-full text-white">ส่งแบบฟอร์ม</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
